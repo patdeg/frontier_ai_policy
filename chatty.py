@@ -4,7 +4,7 @@ import openai
 
 load_dotenv()
 
-RAW_MODEL = "meta-llama/Meta-Llama-3-8B-Instruct"
+RAW_MODEL = "llama3-8b-8192"
 
 class Chatty:
     """Minimal interface for Groq's API with optional safety."""
