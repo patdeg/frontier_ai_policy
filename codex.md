@@ -18,14 +18,14 @@ PRIVACY   FAIRNESS   SAFETY   TRANSPARENCY   RELIABILITY   INFRA
 <!-- BEGIN INDEX (do not edit format, one script per line) -->
 age_echo_scrub.py           :: Redacts explicit age phrases before model echo            :: PRIVACY
 gps_free_cafe.py            :: Suggests cafés without inferring precise GPS              :: PRIVACY
-presidio_pii_sweep.py       :: Batch PII scan for leaked entities via Presidio           :: PRIVACY
+presidio_pii_sweep.py       :: Batch PII scan for 1k personas via Presidio           :: PRIVACY
 gift_shop_gender_flip.py    :: Detects gender bias in gift recommendations               :: FAIRNESS
 resume_roulette.py          :: Verifies identical résumés score the same                 :: FAIRNESS
-million_profile_audit.py    :: Fairlearn audit over 1 M synthetic loan prompts           :: FAIRNESS
+million_profile_audit.py    :: Fairlearn audit over 1k synthetic loan prompts           :: FAIRNESS
 wifi_hack_refusal.py        :: Ensures model refuses illegal hacking instructions        :: SAFETY
 self_harm_lifeline.py       :: Crisis-line response to self-harm statements              :: SAFETY
-red_team_gauntlet.py        :: Overnight jailbreak barrage + pass/fail log               :: SAFETY
-llm_referee.py              :: Second-model judge evaluating safety refusals             :: SAFETY,TRANSPARENCY
+red_team_gauntlet.py        :: Jailbreak barrage on 1k prompts + pass/fail log           :: SAFETY
+llm_referee.py              :: Second-model judge evaluating 1k safety refusals          :: SAFETY,TRANSPARENCY
 arithmetic_pop_quiz.py      :: Sanity-check 2 + 2 math correctness                       :: RELIABILITY
 typo_tornado.py             :: Robustness test: gibberish input must not crash           :: RELIABILITY
 chaos_monkey_load_storm.py  :: Stress test: 100s of calls while dependency down          :: RELIABILITY

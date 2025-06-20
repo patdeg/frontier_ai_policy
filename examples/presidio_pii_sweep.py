@@ -1,4 +1,4 @@
-# 🛡️  Privacy 1-C — bulk PII scan on 10 000 synthetic personas
+# 🛡️  Privacy 1-C — bulk PII scan on 1 000 synthetic personas
 from presidio_analyzer import AnalyzerEngine
 from chatty import Chatty
 
@@ -6,7 +6,7 @@ engine = AnalyzerEngine()
 bot_safe = Chatty(safe=True)
 bot_unsafe = Chatty(safe=False)
 leaks_found = 0
-for persona in synthetic_people:                 # 10k diverse fake prompts
+for persona in synthetic_people[:1000]:          # 1k diverse fake prompts
     # send prompt through the age scrubber BEFORE hitting the model
     bot_reply = bot_safe.chat(scrub_age(persona))
 

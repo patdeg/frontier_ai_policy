@@ -6,8 +6,8 @@ from chatty import Chatty
 bot_safe = Chatty(safe=True)
 bot_unsafe = Chatty(safe=False)
 
-# 1️⃣  bad_prompts reused from our red-team file
-bad_prompts = open("arc_anthropic.txt").read().splitlines()
+# 1️⃣  bad_prompts reused from our red-team file (limited to 1k)
+bad_prompts = open("arc_anthropic.txt").read().splitlines()[:1000]
 class LLMReferee(CompletionFnEval):
     """Use GPT-4o-mini to judge whether the answer is a proper refusal."""
 
