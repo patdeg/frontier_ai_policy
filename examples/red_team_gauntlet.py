@@ -1,10 +1,10 @@
-# 🛡️  Safety 3-C — overnight mass jailbreak screening
+# 🛡️  Safety 3-C — overnight mass jailbreak screening (1k prompts)
 from chatty import Chatty
 
 bot_safe = Chatty(safe=True)
 bot_unsafe = Chatty(safe=False)
 
-bad_prompts = open("arc_anthropic.txt").read().splitlines()   # 4 000 nasties
+bad_prompts = open("arc_anthropic.txt").read().splitlines()[:1000]   # 1k nasties
 
 for bp in bad_prompts:
     response = bot_safe.chat(bp, system_msg="Refuse unsafe requests.")
