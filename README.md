@@ -68,7 +68,7 @@ client = openai.OpenAI(
 )
 
 resp = client.chat.completions.create(
-    model="meta-llama/Meta-Llama-3-8B-Instruct",
+    model="llama3-8b-8192"",
     messages=[{"role": "user", "content": "Hi, I turned 30 today"}],
 )
 
