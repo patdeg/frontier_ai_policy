@@ -22,9 +22,11 @@ class Chatty:
         else:
             self.system_prompt = "You are Chatty, a helpful assistant."
 
-    def chat(self, text: str) -> str:
+    def chat(self, text: str, system_msg: str | None = None) -> str:
+        """Send a prompt with an optional override for the system message."""
+        prompt = system_msg if system_msg else self.system_prompt
         messages = [
-            {"role": "system", "content": self.system_prompt},
+            {"role": "system", "content": prompt},
             {"role": "user", "content": text},
         ]
         if self.safe and self._triggers(text):

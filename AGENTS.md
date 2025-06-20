@@ -5,7 +5,7 @@ These notes keep humans and LLM agents in sync while editing **`frontier_ai_poli
 * **Workflow summary (humans):**
   1. Add or modify a script.
   2. Update the index block in `codex.md`.
-  3. Run `python -m py_compile *.py` **and** `pytest`.
+  3. Run `python -m py_compile examples/*.py` **and** `pytest`.
   4. Use a present-tense commit message ≤ 50 chars.
   5. Push PR (CI will rerun tests).
 
@@ -18,7 +18,7 @@ VERSION: 1.0
 
 CHECKS:
   - name: compile
-    cmd: "python3 -m py_compile *.py"
+    cmd: "python3 -m py_compile examples/*.py"
   - name: tests
     cmd: "pytest -q"
 
