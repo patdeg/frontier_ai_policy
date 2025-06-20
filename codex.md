@@ -1,34 +1,46 @@
-# Frontier AI Policy Codex
+# frontier_ai_policy / CODEX INDEX
+# ---------------------------------------------------------------------------
+# PURPOSE:
+#   Machine-readable lookup for LLMs.  Lists every Python script with one
+#   short description and the pillar tag(s) it supports.
+#
+#   Format (one script per line, no wrapping):
+#     <filename>.py :: <≤80-char description> :: [comma-separated TAGS]
+#
+#   TAGS (5 policy pillars):
+#     PRIVACY   FAIRNESS   SAFETY   TRANSPARENCY   RELIABILITY
+# ---------------------------------------------------------------------------
 
-This codex is a living document for the `frontier_ai_policy` repository.  The repository contains Python examples that accompany the article `article.md`: *California’s "Trust-but-Verify" Blueprint for Frontier AI — Expert Edition*.  Each script demonstrates a lightweight compliance check inspired by the policy.
+age_echo_scrub.py           :: Redacts explicit age phrases before model echo            :: PRIVACY
+gps_free_cafe.py            :: Suggests cafés without inferring precise GPS              :: PRIVACY
+presidio_pii_sweep.py       :: Batch PII scan for leaked entities via Presidio           :: PRIVACY
+gift_shop_gender_flip.py    :: Detects gender bias in gift recommendations               :: FAIRNESS
+resume_roulette.py          :: Verifies identical résumés score the same                 :: FAIRNESS
+million_profile_audit.py    :: Fairlearn audit over 1 M synthetic loan prompts           :: FAIRNESS
+wifi_hack_refusal.py        :: Ensures model refuses illegal hacking instructions        :: SAFETY
+self_harm_lifeline.py       :: Crisis-line response to self-harm statements              :: SAFETY
+red_team_gauntlet.py        :: Overnight jailbreak barrage + pass/fail log               :: SAFETY
+llm_referee.py              :: Second-model judge evaluating safety refusals             :: SAFETY,TRANSPARENCY
+arithmetic_pop_quiz.py      :: Sanity-check 2+2 math correctness                         :: RELIABILITY
+typo_tornado.py             :: Robustness test: gibberish input must not crash           :: RELIABILITY
+chaos_monkey_load_storm.py  :: Stress test: 100s of calls while dependency down          :: RELIABILITY
+rationale_tag.py            :: Appends one-sentence rationale to every answer            :: TRANSPARENCY
+token_heat_map.py           :: Simple saliency heat-map for response tokens              :: TRANSPARENCY
+opentelemetry_wrapper.py    :: Trace prompts/answers via OpenTelemetry (PII redacted)    :: TRANSPARENCY
+chatty.py                   :: Groq client w/ safe-mode toggle (demo helper)             :: INFRA
+hello_world.py              :: One-liner smoke test printing a Chatty reply              :: INFRA
+test.py                     :: Shows safe vs unsafe responses for a sample prompt        :: INFRA
 
-Whenever new examples are added or existing code changes, update this file so that it accurately reflects the latest logic and history of the project.  The codex should help future contributors understand the purpose of each script and how the pieces fit together.
-
-## Current Scripts
-
-- **age_echo_scrub.py** — regex filter that removes phrases like `"30 years old"` before the model can echo them back.
-- **gps_free_cafe.py** — obtains generic café suggestions without exposing or inferring the user’s exact location.
-- **presidio_pii_sweep.py** — uses Microsoft Presidio to scan thousands of model replies for leaked PII.
-- **arithmetic_pop_quiz.py** — quick smoke test to verify basic arithmetic ability ("What is 2 + 2?").
-- **typo_tornado.py** — ensures gibberish input does not crash the assistant.
-- **chaos_monkey_load_storm.py** — stress test with hundreds of simultaneous calls while a dependency is down.
-- **gift_shop_gender_flip.py** — checks for gender bias in product recommendations.
-- **resume_roulette.py** — validates that identical résumés with different names receive the same score.
-- **million_profile_audit.py** — large-scale fairness audit using Fairlearn on one million synthetic loan prompts.
-- **wifi_hack_refusal.py** — verifies that the model refuses illegal hacking requests.
-- **self_harm_lifeline.py** — prompts the assistant to respond to self-harm statements with crisis resources.
-- **red_team_gauntlet.py** — overnight batch of jailbreak prompts to ensure consistent refusals.
-- **llm_referee.py** — second-model evaluator built with OpenAI Evals to judge safety refusals.
-- **opentelemetry_wrapper.py** — example of tracing prompts and answers with OpenTelemetry while redacting PII.
-- **rationale_tag.py** — attaches a short explanation or rationale tag to each answer.
-- **token_heat_map.py** — toy saliency map showing token importances in a response.
-- **chatty.py** — minimal wrapper for Groq's API with a toggleable safety filter.
-- **hello_world.py** — simple entry point that prints a single Chatty response.
-- **test.py** — demonstrates safe versus unsafe modes with the same prompt.
-
-## Updating This Codex
-
-1. Reflect any user request or repository change in this file.
-2. Summarize the purpose of new scripts or documentation.
-3. Keep entries concise, one or two sentences per script.
-4. Commit updates alongside code changes so history stays synchronized.
+# ---------------------------------------------------------------------------
+#  ADDING NEW SCRIPTS
+# ---------------------------------------------------------------------------
+# 1. Keep filename snake_case; avoid spaces.
+# 2. Write docstring inside the script; keep entry here ≤80 chars.
+# 3. Append new line in the same format; include TAG(S).
+# 4. Commit codex.md update in the same PR as the script.
+#
+# NOTE:
+#   Human-oriented explanations live in README.md.  This file stays terse
+#   for fast LLM digestion.  Do not add Markdown tables, images, or long
+#   paragraphs here.
+# ---------------------------------------------------------------------------
