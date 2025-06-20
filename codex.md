@@ -22,7 +22,7 @@ Whenever new examples are added or existing code changes, update this file so th
 - **opentelemetry_wrapper.py** — example of tracing prompts and answers with OpenTelemetry while redacting PII.
 - **rationale_tag.py** — attaches a short explanation or rationale tag to each answer.
 - **token_heat_map.py** — toy saliency map showing token importances in a response.
-- **chatty.py** — minimal wrapper offering safe and basic Chatty modes.
+- **chatty.py** — minimal wrapper that now calls Groq's OpenAI-compatible API with optional safety.
 
 ## Updating This Codex
 
