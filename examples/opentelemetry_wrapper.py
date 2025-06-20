@@ -1,6 +1,10 @@
 # 🛡️  Transparency 4-C — dual mandate: traceable *and* PII-safe
 import hashlib, re
 from opentelemetry import trace
+from chatty import Chatty
+
+bot_safe = Chatty(safe=True)
+bot_unsafe = Chatty(safe=False)
 tracer = trace.get_tracer(__name__)
 
 def scrub(text: str) -> str:
@@ -19,10 +23,13 @@ with tracer.start_as_current_span("assistant_call") as span:
 
     # 🔹 Use a scrubbed prompt for the model call
     safe_prompt = scrub(user_prompt)
-    answer = chat("", safe_prompt)                               # LLM call
+    answer = bot_safe.chat(safe_prompt)                           # LLM call
 
     # 🔹 Scrub the answer before logging it
     span.set_attribute("ai.answer", scrub(answer))
 
     # 🔹 Only structural info about downstream queries
     span.set_attribute("db.query", "SELECT price FROM grinders LIMIT 1")
+
+if __name__ == "__main__":
+    print("UNSAFE:", bot_unsafe.chat(user_prompt))

@@ -32,9 +32,9 @@ chaos_monkey_load_storm.py  :: Stress test: 100s of calls while dependency down 
 rationale_tag.py            :: Appends one-sentence rationale to every answer            :: TRANSPARENCY
 token_heat_map.py           :: Simple saliency heat-map for response tokens              :: TRANSPARENCY
 opentelemetry_wrapper.py    :: Trace prompts/answers via OpenTelemetry (PII redacted)    :: TRANSPARENCY
-chatty.py                   :: Groq client with safe-mode toggle (demo helper)           :: INFRA
-hello_world.py              :: One-liner smoke test printing a Chatty reply              :: INFRA
-test.py                     :: Shows safe vs unsafe responses for a sample prompt        :: INFRA
+examples/chatty.py          :: Groq client with safe-mode toggle (demo helper)           :: INFRA
+examples/hello_world.py     :: One-liner smoke test printing a Chatty reply              :: INFRA
+examples/test.py            :: Shows safe vs unsafe responses for a sample prompt        :: INFRA
 <!-- END INDEX -->
 
 ---
