@@ -9,18 +9,18 @@
 ## What’s in here?
 
 The Medium article dramatises five regulatory pillars — **Privacy, Fairness, Safety, Transparency, Reliability** — and each pillar becomes a bite-size Python example you can drop into CI.  
-File names mirror the narrative (e.g. `1_A_age_scrub.py` = Chapter 1, Scene A).
+File names mirror the narrative (e.g. `1A_age_echo_scrub.py` = Chapter 1, Scene A).
 
 > **Heads-up:** `codex.md` is a *machine-readable* index for automated agents.  
 >  The table below is the *human-friendly* script catalogue.
 
 | Pillar | Script range | One-liner |
 |--------|--------------|-----------|
-| Privacy | `1_A_*` – `1_C_*` | Strip birthdays, kill creepy geo-guesses, bulk PII scans |
-| Fairness | `2_A_*` – `2_C_*` | Gender-swap gift tests, résumé-bias probes, million-row audits |
-| Safety | `3_A_*` – `3_D_*` | Illegal-request refusals, self-harm lifelines, 4 000-prompt red-team |
-| Transparency | `4_A_*` – `4_C_*` | One-sentence rationales, token heat-maps, trace-ID w/ SHA-256 |
-| Reliability | `5_A_*` – `5_C_*` | Math sanity checks, typo tornadoes, Chaos-Monkey load storms |
+| Privacy | `1A_*` – `1C_*` | Strip birthdays, kill creepy geo-guesses, bulk PII scans |
+| Fairness | `2A_*` – `2C_*` | Gender-swap gift tests, résumé-bias probes, million-row audits |
+| Safety | `3A_*` – `3D_*` | Illegal-request refusals, self-harm lifelines, 4 000-prompt red-team |
+| Transparency | `4A_*` – `4C_*` | One-sentence rationales, token heat-maps, trace-ID w/ SHA-256 |
+| Reliability | `5A_*` – `5C_*` | Math sanity checks, typo tornadoes, Chaos-Monkey load storms |
 
 ---
 
