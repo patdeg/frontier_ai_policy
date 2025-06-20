@@ -4,12 +4,17 @@ import openai
 
 load_dotenv()
 
+RAW_MODEL = "meta-llama/Meta-Llama-3-8B-Instruct"
+
 class Chatty:
-    """Minimal interface for GPT-4o-mini with optional safety."""
+    """Minimal interface for Groq's API with optional safety."""
 
     def __init__(self, safe: bool = True):
         self.safe = safe
-        self.client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+        self.client = openai.OpenAI(
+            api_key=os.getenv("GROQ_API_KEY"),
+            base_url="https://api.groq.com/openai/v1",
+        )
         if safe:
             self.system_prompt = (
                 "You are Chatty, a helpful assistant following the California policy on frontier AI."
@@ -25,7 +30,7 @@ class Chatty:
         if self.safe and self._triggers(text):
             return "I'm sorry, but I can't help with that."
         response = self.client.chat.completions.create(
-            model="gpt-4o-mini",
+            model=RAW_MODEL,
             messages=messages,
         )
         return response.choices[0].message.content
