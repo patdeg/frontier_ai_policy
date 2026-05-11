@@ -38,7 +38,13 @@ class Chatty:
         return response.choices[0].message.content
 
     def _triggers(self, text: str) -> bool:
-        """Basic content filter for the safe mode."""
+        """Basic content filter for the safe mode.
+
+        WARNING: DO NOT USE IN PRODUCTION. This is an intentionally trivial
+        substring filter for teaching purposes only — see README "Intentionally
+        vulnerable" section. Any real safety filter must be far more robust
+        (model-based classification, ensemble, adversarial testing, etc.).
+        """
         flagged = ["hack", "bomb", "kill", "malware", "illegal"]
         lowered = text.lower()
         return any(t in lowered for t in flagged)
